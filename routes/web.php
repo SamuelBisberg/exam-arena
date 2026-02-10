@@ -14,4 +14,7 @@ Route::get('dashboard', function () {
     return Inertia::render('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+Route::resource('courses', \App\Http\Controllers\CourseController::class);
+
 require __DIR__.'/settings.php';
