@@ -14,11 +14,13 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Filament\Panel;
 use Illuminate\Support\Facades\App;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable implements FilamentUser, HasMedia
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, TwoFactorAuthenticatable, HasRoles;
+    use HasFactory, Notifiable, TwoFactorAuthenticatable, HasRoles, InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
@@ -65,5 +67,10 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
         return App::environment(['local', 'testing']) || $this->hasPermissionTo(PermissionsEnum::VIEW_ADMIN_PANEL);
+    }
+
+    public function registerMediaCollections(): void
+    {
+        //
     }
 }
