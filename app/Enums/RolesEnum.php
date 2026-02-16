@@ -29,13 +29,4 @@ enum RolesEnum: string
             self::USER => __('Can access and use the platform with limited permissions.'),
         };
     }
-
-    public function permissions(): array
-    {
-        return match ($this) {
-            self::ADMIN => PermissionsEnum::cases(),
-            self::MODERATOR => [PermissionsEnum::EDIT_CONTENT, PermissionsEnum::MODERATE_COMMENTS],
-            self::USER => [],
-        };
-    }
 }
