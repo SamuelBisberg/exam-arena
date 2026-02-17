@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Courses;
 
 use App\Filament\Resources\Courses\Pages\CreateCourse;
 use App\Filament\Resources\Courses\Pages\EditCourse;
+use App\Filament\Resources\Courses\Pages\ListCourseActivities;
 use App\Filament\Resources\Courses\Pages\ListCourses;
 use App\Filament\Resources\Courses\Pages\ViewCourse;
 use App\Filament\Resources\Courses\Schemas\CourseForm;
@@ -54,6 +55,7 @@ class CourseResource extends Resource
             'index' => ListCourses::route('/'),
             'create' => CreateCourse::route('/create'),
             'view' => ViewCourse::route('/{record}'),
+            'activities' => ListCourseActivities::route('/{record}/activities'),
             'edit' => EditCourse::route('/{record}/edit'),
         ];
     }

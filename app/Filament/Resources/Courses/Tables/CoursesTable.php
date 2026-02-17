@@ -4,6 +4,8 @@ namespace App\Filament\Resources\Courses\Tables;
 
 use App\Enums\CourseActivityStatusEnum;
 use App\Enums\CourseLevelEnum;
+use App\Filament\Resources\Courses\CourseResource;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -70,6 +72,11 @@ class CoursesTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                Action::make('activities')
+                    ->label('Activities')
+                    ->icon(Heroicon::ArchiveBox)
+                    ->color('info')
+                    ->url(fn($record) => CourseResource::getUrl('activities', ['record' => $record])),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
