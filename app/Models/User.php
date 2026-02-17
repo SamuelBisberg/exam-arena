@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Enums\PermissionsEnum;
+use App\Enums\RolesEnum;
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -72,5 +73,21 @@ class User extends Authenticatable implements FilamentUser, HasMedia
     public function registerMediaCollections(): void
     {
         //
+    }
+
+    /**
+     * Only allow impersonating users with the right permission, and prevent impersonating admin users.
+     */
+    public function canImpersonate(): bool
+    {
+        return $this->hasPermissionTo(PermissionsEnum::IMPERSONATE_USERS);
+    }
+
+    /**
+     * Dont allow impersonating admin users.
+     */
+    public function canBeImpersonated(): bool
+    {
+        return ! $this->hasRole(RolesEnum::ADMIN);
     }
 }

@@ -43,6 +43,7 @@
         @vite(['resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
         @inertiaHead
     </head>
+    <x-impersonate::banner style="auto" position="bottom" fixed={{ false }} />
     <body class="font-sans antialiased">
         @inertia
     </body>

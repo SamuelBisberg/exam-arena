@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use STS\FilamentImpersonate\Actions\Impersonate;
 
 class UsersTable
 {
@@ -30,7 +31,7 @@ class UsersTable
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('two_factor_confirmed_at')
                     ->dateTime()
                     ->sortable(),
@@ -39,6 +40,7 @@ class UsersTable
                 //
             ])
             ->recordActions([
+                Impersonate::make()->redirectTo(route('dashboard')),
                 ViewAction::make(),
                 EditAction::make(),
             ])
