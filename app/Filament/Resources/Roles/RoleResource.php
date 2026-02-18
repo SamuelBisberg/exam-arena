@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Roles;
 
+use App\Enums\RolesEnum;
 use App\Filament\Resources\Roles\Pages\CreateRole;
 use App\Filament\Resources\Roles\Pages\EditRole;
 use App\Filament\Resources\Roles\Pages\ListRoles;
@@ -14,6 +15,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\Permission\Models\Role;
 
 class RoleResource extends Resource
@@ -49,5 +51,10 @@ class RoleResource extends Resource
             'create' => CreateRole::route('/create'),
             'edit' => EditRole::route('/{record}/edit'),
         ];
+    }
+
+    public static function canEdit(Model $record): bool
+    {
+        return ! (bool) RolesEnum::tryFrom($record->name);
     }
 }

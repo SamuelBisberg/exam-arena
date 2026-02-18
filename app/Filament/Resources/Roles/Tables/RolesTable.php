@@ -44,7 +44,7 @@ class RolesTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()->visible(fn($record) => ! (bool) RolesEnum::tryFrom($record->name)),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
