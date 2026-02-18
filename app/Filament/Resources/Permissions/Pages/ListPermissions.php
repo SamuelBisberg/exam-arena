@@ -3,13 +3,11 @@
 namespace App\Filament\Resources\Permissions\Pages;
 
 use App\Filament\Resources\Permissions\PermissionResource;
-use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Tables\Table;
 use Spatie\Permission\Models\Role;
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
-use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 
@@ -21,7 +19,7 @@ class ListPermissions extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            //
         ];
     }
 
@@ -38,21 +36,24 @@ class ListPermissions extends ListRecords
                     ->sortable()
                     ->searchable(),
 
-                ...Role::all()->map(
-                    fn(Role $role) => ToggleColumn::make('role_' . $role->id)
-                        ->alignCenter()
-                        ->label(RolesEnum::tryFrom($role->name)?->label() ?? $role->name)
-                        ->state(fn($record) => $record->roles->contains($role))
-                        ->disabled(fn() => $role->name === RolesEnum::ADMIN->value)
-                        ->updateStateUsing(
-                            fn($record, $state) => $state
-                                ? $record->assignRole($role)
-                                : $record->removeRole($role)
-                        )
-                )->toArray(),
+                ...Role::query()
+                    ->orderBy('id')
+                    ->get()
+                    ->map(
+                        fn(Role $role) => ToggleColumn::make('role_' . $role->id)
+                            ->alignCenter()
+                            ->label(RolesEnum::tryFrom($role->name)?->label() ?? $role->name)
+                            ->state(fn($record) => $record->roles->contains($role))
+                            ->disabled(fn() => $role->name === RolesEnum::ADMIN->value)
+                            ->updateStateUsing(
+                                fn($record, $state) => $state
+                                    ? $record->assignRole($role)
+                                    : $record->removeRole($role)
+                            )
+                    )->toArray(),
             ])
             ->recordActions([
-                EditAction::make(),
+                //
             ])
             ->paginated(false)
             ->modifyQueryUsing(fn($query) => $query->with('roles'));
