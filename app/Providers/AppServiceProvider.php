@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -24,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureDefaults();
+        $this->registerDefaultLocals();
     }
 
     /**
@@ -37,14 +39,29 @@ class AppServiceProvider extends ServiceProvider
             app()->isProduction(),
         );
 
-        Password::defaults(fn (): ?Password => app()->isProduction()
-            ? Password::min(12)
+        Password::defaults(
+            fn(): ?Password => app()->isProduction()
+                ? Password::min(12)
                 ->mixedCase()
                 ->letters()
                 ->numbers()
                 ->symbols()
                 ->uncompromised()
-            : null
+                : null
         );
+    }
+
+    protected function registerDefaultLocals(): void
+    {
+        TranslatableTabs::configureUsing(function (TranslatableTabs $component) {
+            $component
+                // locales labels
+                ->localesLabels([
+                    'he' => __('Hebrew'),
+                    'en' => __('English'),
+                ])
+                // default locales
+                ->locales(['he', 'en']);
+        });
     }
 }
