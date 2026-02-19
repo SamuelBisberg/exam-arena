@@ -47,4 +47,9 @@ class Course extends Model implements HasMedia
                     ->sharpen(10);
             });
     }
+
+    public function univercity()
+    {
+        return $this->belongsTo(Univercity::class);
+    }
 }
