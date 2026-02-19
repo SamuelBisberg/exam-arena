@@ -1,0 +1,482 @@
+[
+  {
+    "name": {
+      "he": "אוניברסיטת אריאל שבשומרון",
+      "en": "Ariel University"
+    },
+    "website_url": "https://www.ariel.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo_ariel_univer.jpg"
+  },
+  {
+    "name": {
+      "he": "אוניברסיטת בן-גוריון בנגב",
+      "en": "Ben-Gurion University of the Negev"
+    },
+    "website_url": "https://www.bgu.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo1.jpg"
+  },
+  {
+    "name": {
+      "he": "אוניברסיטת בר-אילן",
+      "en": "Bar-Ilan University"
+    },
+    "website_url": "https://www.biu.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/בר-אילן-300x112.png"
+  },
+  {
+    "name": {
+      "he": "אוניברסיטת חיפה",
+      "en": "University of Haifa"
+    },
+    "website_url": "https://www.haifa.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/חיפה-חדש-1-300x181.jpg"
+  },
+  {
+    "name": {
+      "he": "אוניברסיטת רייכמן",
+      "en": "Reichman University"
+    },
+    "website_url": "https://www.runi.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/Reichman_University_Logo_HE_Blue_RGB-300x183.png"
+  },
+  {
+    "name": {
+      "he": "אוניברסיטת תל אביב",
+      "en": "Tel Aviv University"
+    },
+    "website_url": "https://www.tau.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/tau4-300x300.png"
+  },
+  {
+    "name": {
+      "he": "אלקאסמי - מכללה אקדמית לחינוך",
+      "en": "Al-Qasemi Academic College of Education"
+    },
+    "website_url": "https://www.qsm.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo5.jpg"
+  },
+  {
+    "name": {
+      "he": "אמונה-אפרתה - מכללה אקדמית לאמנויות וחינוך",
+      "en": "Emuna-Efrata Academic College of Arts and Education"
+    },
+    "website_url": "https://www.emuna-efrata.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/אמונה-אפרתה.jpg"
+  },
+  {
+    "name": {
+      "he": "אפקה - המכללה האקדמית להנדסה בתל-אביב",
+      "en": "Afeka Tel Aviv Academic College of Engineering"
+    },
+    "website_url": "https://www.afeka.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/לוגו-אפקה_100X64.jpg"
+  },
+  {
+    "name": {
+      "he": "בצלאל - אקדמיה לאמנות ועיצוב ירושלים",
+      "en": "Bezalel Academy of Arts and Design Jerusalem"
+    },
+    "website_url": "https://www.bezalel.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo9.jpg"
+  },
+  {
+    "name": {
+      "he": "האוניברסיטה העברית בירושלים",
+      "en": "The Hebrew University of Jerusalem"
+    },
+    "website_url": "https://www.huji.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/אונ-העברית-171x300.jpg"
+  },
+  {
+    "name": {
+      "he": "האוניברסיטה הפתוחה",
+      "en": "The Open University of Israel"
+    },
+    "website_url": "https://www.openu.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/Logo-OP-Malag.png"
+  },
+  {
+    "name": {
+      "he": "האקדמיה למוסיקה ולמחול בירושלים",
+      "en": "The Jerusalem Academy of Music and Dance"
+    },
+    "website_url": "https://www.jamd.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo12.jpg"
+  },
+  {
+    "name": {
+      "he": "הטכניון - מכון טכנולוגי לישראל",
+      "en": "Technion - Israel Institute of Technology"
+    },
+    "website_url": "https://www.technion.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/Technion-IIT-Vertical-Heb-B-181x300.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית אחוה",
+      "en": "Achva Academic College"
+    },
+    "website_url": "https://www.achva.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/לוגו-חדש-אחוה-300x139.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית אשקלון",
+      "en": "Ashkelon Academic College"
+    },
+    "website_url": "https://www.aac.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/LogoMAshkelon.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית בוינגייט",
+      "en": "The Academic College at Wingate"
+    },
+    "website_url": "https://www.win.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/לוגו-וינגייט-300x183.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית בית-ברל",
+      "en": "Beit Berl College"
+    },
+    "website_url": "https://www.beitberl.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/LOGOWEB_full-300x104.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית גליל מערבי",
+      "en": "Western Galilee College"
+    },
+    "website_url": "https://www.wgc.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/גליל-מערבי-חדש-300x113.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית הדתית לחינוך שאנן",
+      "en": "Shaanan Religious College of Education"
+    },
+    "website_url": "https://www.shaanan.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/לוגו-שאנן-300x300.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית הערבית לחינוך בישראל - חיפה",
+      "en": "The Arab Academic College for Education in Israel - Haifa"
+    },
+    "website_url": "https://www.arabcol.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo20.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית הרצוג מיסודן של מכללות ליפשיץ והרצוג",
+      "en": "Herzog Academic College"
+    },
+    "website_url": "https://www.herzog.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/לוגו-מכללת-הרצוג-2019-300x115.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית חמדת",
+      "en": "Hemdat Academic College"
+    },
+    "website_url": "https://www.hemdat.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/לוגו-המכללה-האקדמית-חמדת-300x104.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית כנרת",
+      "en": "Kinneret Academic College"
+    },
+    "website_url": "https://www.kinneret.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/כנרת-לוגו-חדש-300x190.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית להנדסה בראודה בכרמיאל",
+      "en": "Braude College of Engineering"
+    },
+    "website_url": "https://www.braude.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/בראודה-בכרמיאל-300x212.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית להנדסה ע”ש סמי שמעון",
+      "en": "Sami Shamoon College of Engineering (SCE)"
+    },
+    "website_url": "https://www.sce.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo25.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית לחינוך גבעת וושינגטון",
+      "en": "Givat Washington Academic College of Education"
+    },
+    "website_url": "https://www.washington.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo26.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית לחינוך ולספורט אוהלו בקצרין",
+      "en": "Ohalo College"
+    },
+    "website_url": "https://www.ohalo.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo27.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית לחינוך ע\"ש א. ד. גורדון",
+      "en": "Gordon College of Education"
+    },
+    "website_url": "https://www.gordon.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo36.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית לחינוך ע\"ש דוד ילין",
+      "en": "David Yellin College of Education"
+    },
+    "website_url": "https://www.dyellin.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/דוד-ילין-300x300.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית לחינוך ע\"ש קיי",
+      "en": "Kaye Academic College of Education"
+    },
+    "website_url": "https://www.kaye.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/לוגו-קיי.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית נתניה",
+      "en": "Netanya Academic College"
+    },
+    "website_url": "https://www.netanya.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/30370_Hakademit-Natanya-Logo-NEW_Page_1-300x82.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית ספיר",
+      "en": "Sapir Academic College"
+    },
+    "website_url": "https://www.sapir.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo_EMBED-87-300x162.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית עמק יזרעאל ע\"ש מקס שטרן",
+      "en": "Max Stern Yezreel Valley College"
+    },
+    "website_url": "https://www.yvc.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo32.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית צפת",
+      "en": "Zefat Academic College"
+    },
+    "website_url": "https://www.zefat.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/zefat-logo-300x66.png"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית רמת גן",
+      "en": "The Academic College of Ramat Gan"
+    },
+    "website_url": "https://www.iac.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/רמת-גן-חדש-300x134.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית תל חי",
+      "en": "Tel-Hai Academic College"
+    },
+    "website_url": "https://www.telhai.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/Logo-Tel-Hai-300x188.jpg"
+  },
+  {
+    "name": {
+      "he": "המכללה האקדמית תל-אביב יפו",
+      "en": "Academic College of Tel Aviv-Yaffo"
+    },
+    "website_url": "https://www.mta.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo34.jpg"
+  },
+  {
+    "name": {
+      "he": "המסלול האקדמי המכללה למינהל",
+      "en": "College of Management Academic Studies"
+    },
+    "website_url": "https://www.colman.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/המכללה-למינהל-לוגו-חדש-בלי-AI-300x225.png"
+  },
+  {
+    "name": {
+      "he": "המרכז האקדמי הרב תחומי ירושלים",
+      "en": "Hadassah Academic College"
+    },
+    "website_url": "https://www.hac.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/לוגו-משולב-עברית-אנגלית-03-300x86.png"
+  },
+  {
+    "name": {
+      "he": "המרכז האקדמי לב",
+      "en": "Jerusalem College of Technology (JCT)"
+    },
+    "website_url": "https://www.jct.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/LEV-300x185.png"
+  },
+  {
+    "name": {
+      "he": "המרכז האקדמי לוינסקי-וינגייט",
+      "en": "Levinsky-Wingate Academic Center"
+    },
+    "website_url": "https://www.l-w.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/לוינסקי-300x109.png"
+  },
+  {
+    "name": {
+      "he": "המרכז האקדמי למשפט ולעסקים",
+      "en": "Academic Center of Law and Business"
+    },
+    "website_url": "https://www.clb.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo40.jpg"
+  },
+  {
+    "name": {
+      "he": "המרכז האקדמי לעיצוב ולחינוך ויצו - חיפה ע\"ש נרי בלומפילד",
+      "en": "WIZO Haifa Academy of Design and Education"
+    },
+    "website_url": "https://www.wizodzn.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo41.jpg"
+  },
+  {
+    "name": {
+      "he": "המרכז האקדמי פרס",
+      "en": "Peres Academic Center"
+    },
+    "website_url": "https://www.pac.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo65.jpg"
+  },
+  {
+    "name": {
+      "he": "המרכז האקדמי רופין",
+      "en": "Ruppin Academic Center"
+    },
+    "website_url": "https://www.ruppin.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo.Ruppin.round_-300x300.jpg"
+  },
+  {
+    "name": {
+      "he": "המרכז האקדמי שלם",
+      "en": "Shalem College"
+    },
+    "website_url": "https://www.shalem.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2013/06/shalem-college-logo-300x103.jpg"
+  },
+  {
+    "name": {
+      "he": "המרכז האקדמי שערי מדע ומשפט",
+      "en": "Sha'arei Mishpat Academic Center"
+    },
+    "website_url": "https://www.mishpat.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo-last2-300x212.png"
+  },
+  {
+    "name": {
+      "he": "הקריה האקדמית אונו",
+      "en": "Ono Academic College"
+    },
+    "website_url": "https://www.ono.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo46.jpg"
+  },
+  {
+    "name": {
+      "he": "מכון ויצמן למדע",
+      "en": "Weizmann Institute of Science"
+    },
+    "website_url": "https://www.weizmann.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo49.jpg"
+  },
+  {
+    "name": {
+      "he": "מכון טכנולוגי חולון - HIT",
+      "en": "Holon Institute of Technology (HIT)"
+    },
+    "website_url": "https://www.hit.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo50.jpg"
+  },
+  {
+    "name": {
+      "he": "מכון שכטר למדעי היהדות",
+      "en": "Schechter Institute of Jewish Studies"
+    },
+    "website_url": "https://www.schechter.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo53.jpg"
+  },
+  {
+    "name": {
+      "he": "מכללה אקדמית לחינוך \"אורנים\"",
+      "en": "Oranim Academic College of Education"
+    },
+    "website_url": "https://www.oranim.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/‏‏לוגו-1200-1200אורנים-300x300.jpg"
+  },
+  {
+    "name": {
+      "he": "מכללה אקדמית לחינוך - אורות ישראל מיסודן של מכללת אורות ישראל ומכללת מורשת יעקב",
+      "en": "Orot Israel College"
+    },
+    "website_url": "https://www.orot.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo51.jpg"
+  },
+  {
+    "name": {
+      "he": "מכללה ירושלים",
+      "en": "Jerusalem College"
+    },
+    "website_url": "https://www.macam.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo55.jpg"
+  },
+  {
+    "name": {
+      "he": "מכללת סכנין להכשרת עובדי הוראה",
+      "en": "Sakhnin College"
+    },
+    "website_url": "https://www.sakhnin.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo59.jpg"
+  },
+  {
+    "name": {
+      "he": "סמינר הקיבוצים - המכללה לחינוך לטכנולוגיה ולאומנויות",
+      "en": "Kibbutzim College of Education, Technology and the Arts"
+    },
+    "website_url": "https://www.smkb.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/סמינר-הקיבוצים-200x300.jpg"
+  },
+  {
+    "name": {
+      "he": "עזריאלי- מכללה אקדמית להנדסה ירושלים",
+      "en": "Azrieli College of Engineering Jerusalem"
+    },
+    "website_url": "https://www.jce.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/Azrieli-Logo-300x191.png"
+  },
+  {
+    "name": {
+      "he": "שנקר. הנדסה. עיצוב. אמנות",
+      "en": "Shenkar - Engineering. Design. Art."
+    },
+    "website_url": "https://www.shenkar.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/logo66.jpg"
+  },
+  {
+    "name": {
+      "he": "תלפיות - המכללה האקדמית לחינוך",
+      "en": "Talpiot College of Education"
+    },
+    "website_url": "https://www.talpiot.ac.il",
+    "logo_url": "https://che.org.il/wp-content/uploads/2012/07/לוגו-תלפיות-1-1-300x300.png"
+  }
+]
