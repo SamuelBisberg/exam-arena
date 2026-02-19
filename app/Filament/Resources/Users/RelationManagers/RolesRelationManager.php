@@ -2,8 +2,12 @@
 
 namespace App\Filament\Resources\Users\RelationManagers;
 
+use App\Enums\RolesEnum;
 use App\Filament\Resources\Roles\RoleResource;
+use Filament\Actions\AttachAction;
 use Filament\Actions\CreateAction;
+use Filament\Actions\DetachAction;
+use Filament\Forms\Components\Select;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Table;
 
@@ -16,8 +20,18 @@ class RolesRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
+            ->recordActions([
+                DetachAction::make(),
+            ])
             ->headerActions([
                 CreateAction::make(),
+                AttachAction::make()
+                    ->recordSelect(fn(Select $select) => $select->options(
+                        RoleResource::getEloquentQuery()
+                            ->whereNotIn('id', $this->ownerRecord->roles()->pluck('id'))
+                            ->pluck('name', 'id')
+                            ->mapwithKeys(fn($name, $id) => [$id => RolesEnum::tryFrom($name)?->label() ?? $name])
+                    )),
             ]);
     }
 }
