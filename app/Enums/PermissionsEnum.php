@@ -13,6 +13,7 @@ enum PermissionsEnum: string
     case EDIT_CONTENT = 'edit_content';
     case MODERATE_COMMENTS = 'moderate_comments';
     case IMPERSONATE_USERS = 'impersonate_users';
+    case VIEW_HIDDEN_CONTENT = 'view_hidden_content';
 
     public function label(): string
     {
@@ -21,7 +22,8 @@ enum PermissionsEnum: string
             self::MANAGE_USERS => __('Manage Users'),
             self::EDIT_CONTENT => __('Edit Content'),
             self::MODERATE_COMMENTS => __('Moderate Comments'),
-            self::IMPERSONATE_USERS => __('Impersonate Users'), 
+            self::IMPERSONATE_USERS => __('Impersonate Users'),
+            self::VIEW_HIDDEN_CONTENT => __('View Hidden Content'),
         };
     }
 
@@ -33,6 +35,7 @@ enum PermissionsEnum: string
             self::EDIT_CONTENT => __('Allows editing of content across the platform.'),
             self::MODERATE_COMMENTS => __('Allows moderating user comments, including approving, editing, and deleting comments.'),
             self::IMPERSONATE_USERS => __('Allows impersonating other users to see the application from their perspective.'),
+            self::VIEW_HIDDEN_CONTENT => __('Allows viewing content that is hidden from regular users.'),
         };
     }
 }
