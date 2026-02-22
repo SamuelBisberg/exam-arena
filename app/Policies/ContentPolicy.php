@@ -22,7 +22,7 @@ class ContentPolicy extends BasePolicy
     /**
      * The name of the status field on the model that indicates the content's visibility status. This should be set in the specific policy for each content type.
      */
-    static string $statusField = 'active';
+    static string $statusField = 'status';
 
     /**
      * Determine whether the user can view any models.
