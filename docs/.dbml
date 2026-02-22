@@ -1,0 +1,170 @@
+Project {
+  name: "exam-arena"
+  description: "A platform for all your exam needs"
+}
+
+Table users {
+  id int [pk, increment]
+  name varchar
+  email varchar
+  password varchar
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table universities {
+  id int [pk, increment]
+  name jsonb
+  short_name jsonb [null]
+  slug varchar [unique]
+  country varchar [null]
+  logo_path varchar [null]
+  website_url varchar [null]
+  description text [null]
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table courses {
+  id int [pk, increment]
+  title varchar
+  description text [null]
+  course_code varchar [unique]
+  level varchar
+  activity_status varchar
+  created_by int [ref: > users.id, null]
+  university_id int [ref: > universities.id, null]
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table topics {
+  id int [pk, increment]
+  order int
+  name varchar
+  description text [null]
+  status varchar
+  course_id int [ref: > courses.id]
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table cards_collections {
+  id int [pk, increment]
+  topic_id int [ref: > topics.id]
+  name varchar
+  description text [null]
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table cards {
+  id int [pk, increment]
+  collection_id int [ref: > cards_collections.id]
+  question text
+  answer text
+  created_at timestamp
+  updated_at timestamp
+}
+
+Enum question_type {
+  mcq
+  true_false
+  numeric
+}
+
+Enum attempt_type {
+  official
+  student
+  lecturer
+  reconstructed
+  ai
+}
+
+Table exams {
+  id int [pk, increment]
+  course_id int [not null, ref: > courses.id]
+
+  questionnaire_number int
+  session_number int
+  semester varchar
+  exam_type varchar
+
+  exam_date date
+
+  duration_hours int
+  total_pages int
+  total_questions int
+
+  instructions text
+
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table questions {
+  id int [pk, increment]
+  exam_id int [not null, ref: > exams.id]
+
+  question_number int [not null]
+
+  question_type question_type [not null]
+  status varchar [not null]
+
+  question_text text
+
+  // MCQ
+  options jsonb
+
+  // NUMERIC
+  correct_numeric_answer decimal
+  tolerance decimal
+
+  points decimal
+  metadata jsonb
+
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table exam_attempts {
+  id int [pk, increment]
+  public_uuid uuid [not null, unique]
+
+  exam_id int [not null, ref: > exams.id]
+  user_id int [ref: > users.id]
+
+  attempt_type attempt_type [not null]
+
+  score decimal
+  submitted_at timestamp
+
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table exam_answers {
+  id int [pk, increment]
+  attempt_id int [not null, ref: > exam_attempts.id]
+  question_id int [not null, ref: > questions.id]
+
+  selected_option_key varchar
+  numeric_answer decimal
+
+  is_correct boolean
+  points_awarded decimal
+  explanation text
+
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table question_topics {
+  question_id int [ref: > questions.id]
+  topic_id int [ref: > topics.id]
+
+  Indexes {
+    (question_id, topic_id) [pk]
+  }
+
+}
