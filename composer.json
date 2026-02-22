@@ -17,6 +17,7 @@
         "laravel/wayfinder": "^0.1.9",
         "league/flysystem-aws-s3-v3": "^3.31",
         "pxlrbt/filament-activity-log": "^2.1",
+        "spatie/eloquent-sortable": "^5.0",
         "spatie/laravel-activitylog": "^4.11",
         "spatie/laravel-medialibrary": "^11.20",
         "spatie/laravel-permission": "^6.24",
