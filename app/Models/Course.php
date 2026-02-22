@@ -8,6 +8,7 @@ use App\Enums\CourseLevelEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -51,5 +52,10 @@ class Course extends Model implements HasMedia
     public function univercity()
     {
         return $this->belongsTo(Univercity::class);
+    }
+
+    public function topics(): HasMany
+    {
+        return $this->hasMany(Topic::class);
     }
 }
