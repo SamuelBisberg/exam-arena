@@ -14,11 +14,11 @@ class PermissionsTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->formatStateUsing(fn($state) => PermissionsEnum::tryFrom($state)?->label() ?? $state)
+                    ->formatStateUsing(fn ($state) => PermissionsEnum::tryFrom($state)?->label() ?? $state)
                     ->searchable(),
                 TextColumn::make('guard_name')
                     ->badge()
-                    ->icon(fn($state) => match ($state) {
+                    ->icon(fn ($state): \Filament\Support\Icons\Heroicon => match ($state) {
                         'web' => Heroicon::GlobeEuropeAfrica,
                         'api' => Heroicon::Server,
                         default => Heroicon::ShieldCheck,

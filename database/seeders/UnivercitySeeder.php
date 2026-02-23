@@ -15,12 +15,12 @@ class UnivercitySeeder extends Seeder
     {
         collect($this->getUnivercities())
             ->each(
-                fn(array $univercity) => Univercity::firstOrCreate([
+                fn (array $univercity) => Univercity::firstOrCreate([
                     'slug' => Str::slug($univercity['name']['en']),
                 ], [
                     'name' => $univercity['name'],
                     'website_url' => $univercity['website_url'] ?? null,
-                    'logo_path' => 'images/univercities/logos/' . hash('sha256', Str::lower(trim($univercity['name']['en']))) . '.' . Str::afterLast($univercity['logo_url'], '.'),
+                    'logo_path' => 'images/univercities/logos/'.hash('sha256', Str::lower(trim($univercity['name']['en']))).'.'.Str::afterLast($univercity['logo_url'], '.'),
                     'country' => 'Israel',
                 ])
             );

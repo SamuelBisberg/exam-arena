@@ -10,7 +10,6 @@ use App\Filament\Resources\Topics\Pages\ListTopics;
 use App\Filament\Resources\Topics\Schemas\TopicForm;
 use App\Filament\Resources\Topics\Tables\TopicsTable;
 use App\Models\Topic;
-use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;

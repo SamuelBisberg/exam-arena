@@ -6,7 +6,6 @@ use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 /**
- * 
  * Provides activity logging with sensible defaults for models.
  *
  * Automatically logs changes to fillable attributes, with optional additional

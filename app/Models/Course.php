@@ -17,7 +17,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 class Course extends Model implements HasMedia
 {
     /** @use HasFactory<\Database\Factories\CourseFactory> */
-    use HasFactory, InteractsWithMedia, HasLogsActivityWithDefaultOptions;
+    use HasFactory, HasLogsActivityWithDefaultOptions, InteractsWithMedia;
 
     protected $fillable = [
         'title',
@@ -42,7 +42,7 @@ class Course extends Model implements HasMedia
         $this->addMediaCollection('image')
             ->useFallbackPath(public_path('images/default-course-image.png'))
             ->singleFile()
-            ->registerMediaConversions(function (Media $media) {
+            ->registerMediaConversions(function (Media $media): void {
                 $this->addMediaConversion('thumb')
                     ->fit(Fit::Crop, 200, 100)
                     ->sharpen(10);

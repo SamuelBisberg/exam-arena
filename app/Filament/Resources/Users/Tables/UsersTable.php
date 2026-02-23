@@ -6,7 +6,6 @@ use App\Enums\RolesEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
 use Filament\Support\Enums\Size;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -25,7 +24,7 @@ class UsersTable
                     ->searchable(),
                 TextColumn::make('roles.name')
                     ->badge()
-                    ->formatStateUsing(fn($state) => RolesEnum::tryFrom($state)?->label() ?? $state)
+                    ->formatStateUsing(fn ($state) => RolesEnum::tryFrom($state)?->label() ?? $state)
                     ->searchable(),
                 TextColumn::make('email_verified_at')
                     ->dateTime()

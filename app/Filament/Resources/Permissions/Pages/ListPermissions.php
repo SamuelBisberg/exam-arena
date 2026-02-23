@@ -2,15 +2,14 @@
 
 namespace App\Filament\Resources\Permissions\Pages;
 
-use App\Filament\Resources\Permissions\PermissionResource;
-use Filament\Resources\Pages\ListRecords;
-use Filament\Tables\Table;
-use Spatie\Permission\Models\Role;
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
+use App\Filament\Resources\Permissions\PermissionResource;
+use Filament\Resources\Pages\ListRecords;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
-
+use Filament\Tables\Table;
+use Spatie\Permission\Models\Role;
 
 class ListPermissions extends ListRecords
 {
@@ -32,7 +31,7 @@ class ListPermissions extends ListRecords
             ->columns([
                 TextColumn::make('name')
                     ->label('Permission')
-                    ->formatStateUsing(fn($state) => PermissionsEnum::tryFrom($state)?->label() ?? $state)
+                    ->formatStateUsing(fn ($state) => PermissionsEnum::tryFrom($state)?->label() ?? $state)
                     ->sortable()
                     ->searchable(),
 
@@ -40,13 +39,13 @@ class ListPermissions extends ListRecords
                     ->orderBy('id')
                     ->get()
                     ->map(
-                        fn(Role $role) => ToggleColumn::make('role_' . $role->id)
+                        fn (Role $role): \Filament\Tables\Columns\ToggleColumn => ToggleColumn::make('role_'.$role->id)
                             ->alignCenter()
                             ->label(RolesEnum::tryFrom($role->name)?->label() ?? $role->name)
-                            ->state(fn($record) => $record->roles->contains($role))
-                            ->disabled(fn() => $role->name === RolesEnum::ADMIN->value)
+                            ->state(fn ($record) => $record->roles->contains($role))
+                            ->disabled(fn (): bool => $role->name === RolesEnum::ADMIN->value)
                             ->updateStateUsing(
-                                fn($record, $state) => $state
+                                fn ($record, $state) => $state
                                     ? $record->assignRole($role)
                                     : $record->removeRole($role)
                             )
@@ -56,6 +55,6 @@ class ListPermissions extends ListRecords
                 //
             ])
             ->paginated(false)
-            ->modifyQueryUsing(fn($query) => $query->with('roles'));
+            ->modifyQueryUsing(fn ($query) => $query->with('roles'));
     }
 }

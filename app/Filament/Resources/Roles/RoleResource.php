@@ -53,6 +53,9 @@ class RoleResource extends Resource
         ];
     }
 
+    /**
+     * @param  \Spatie\Permission\Models\Role  $record
+     */
     public static function canEdit(Model $record): bool
     {
         return ! (bool) RolesEnum::tryFrom($record->name);
