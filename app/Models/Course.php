@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\Concerns\HasLogsActivityWithDefaultOptions;
 use App\Enums\CourseActivityStatusEnum;
 use App\Enums\CourseLevelEnum;
+use App\Traits\HasLogsActivityWithDefaultOptions;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

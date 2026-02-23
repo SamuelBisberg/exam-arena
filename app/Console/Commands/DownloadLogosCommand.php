@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
-class DownloadLogos extends Command
+class DownloadLogosCommand extends Command
 {
     /**
      * The name and signature of the console command.

@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-use App\Concerns\Trait\EnumTrait;
+use App\Traits\EnumTrait;
 
 enum TopicStatusEnum: string
 {
