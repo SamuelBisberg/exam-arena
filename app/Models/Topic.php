@@ -11,6 +11,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
 
+/**
+ * @property int $id
+ * @property string $name
+ * @property string|null $description
+ * @property TopicStatusEnum $topic_status
+ * @property int $course_id
+ * @property int $order_column
+ */
 class Topic extends Model implements Sortable
 {
     /** @use HasFactory<\Database\Factories\TopicFactory> */

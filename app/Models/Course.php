@@ -14,6 +14,14 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
+/**
+ * @property int $id
+ * @property string $title
+ * @property string|null $description
+ * @property string|null $course_code
+ * @property CourseLevelEnum $level
+ * @property CourseActivityStatusEnum $activity_status
+ */
 class Course extends Model implements HasMedia
 {
     /** @use HasFactory<\Database\Factories\CourseFactory> */

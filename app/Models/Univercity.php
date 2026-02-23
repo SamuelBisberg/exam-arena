@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Translatable\HasTranslations;
 
+/**
+ * @property int $id
+ * @property string $name
+ * @property string $short_name
+ * @property string|null $logo_path
+ * @property string|null $country
+ * @property string|null $website_url
+ * @property string|null $description
+ */
 class Univercity extends Model
 {
     use HasLogsActivityWithDefaultOptions, HasTranslations;
@@ -15,7 +24,7 @@ class Univercity extends Model
         'name',
         'short_name',
         'logo_path',
-        'city',
+        'country',
         'website_url',
         'description',
     ];
