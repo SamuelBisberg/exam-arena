@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('level');
             $table->string('activity_status');
 
-            $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained()->onDelete('set null');
+            $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained()->nullOnDelete();
 
             $table->timestamps();
         });

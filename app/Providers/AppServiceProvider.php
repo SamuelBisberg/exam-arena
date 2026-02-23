@@ -40,20 +40,20 @@ class AppServiceProvider extends ServiceProvider
         );
 
         Password::defaults(
-            fn(): ?Password => app()->isProduction()
+            fn (): ?Password => app()->isProduction()
                 ? Password::min(12)
-                ->mixedCase()
-                ->letters()
-                ->numbers()
-                ->symbols()
-                ->uncompromised()
+                    ->mixedCase()
+                    ->letters()
+                    ->numbers()
+                    ->symbols()
+                    ->uncompromised()
                 : null
         );
     }
 
     protected function registerDefaultLocals(): void
     {
-        TranslatableTabs::configureUsing(function (TranslatableTabs $component) {
+        TranslatableTabs::configureUsing(function (TranslatableTabs $component): void {
             $component
                 // locales labels
                 ->localesLabels([

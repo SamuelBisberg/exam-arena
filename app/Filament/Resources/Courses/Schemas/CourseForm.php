@@ -6,8 +6,8 @@ use App\Enums\CourseActivityStatusEnum;
 use App\Enums\CourseLevelEnum;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,7 +35,7 @@ class CourseForm
                     ->relationship('createdBy', 'name')
                     ->searchable()
                     ->preload()
-                    ->getOptionLabelFromRecordUsing(fn($record) => $record->name . ' (' . $record->email . ')')
+                    ->getOptionLabelFromRecordUsing(fn ($record): string => $record->name.' ('.$record->email.')')
                     ->default(Auth::user()->getKey())
                     ->required(),
                 SpatieMediaLibraryFileUpload::make('image')

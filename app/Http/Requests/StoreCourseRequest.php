@@ -29,7 +29,7 @@ class StoreCourseRequest extends FormRequest
             'description' => ['nullable', 'string', 'max:1000'],
             'course_code' => ['required', 'string', 'max:255', 'unique:courses,course_code'],
             'level' => ['required', Rule::enum(CourseLevelEnum::class)],
-            'activity_status' => ['sometimes', Rule::enum(CourseActivityStatusEnum::class), 'default:' . CourseActivityStatusEnum::ACTIVE->value],
+            'activity_status' => ['sometimes', Rule::enum(CourseActivityStatusEnum::class), 'default:'.CourseActivityStatusEnum::ACTIVE->value],
         ];
     }
 }

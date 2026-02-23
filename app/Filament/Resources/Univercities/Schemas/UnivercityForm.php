@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\Univercities\Schemas;
 
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class UnivercityForm
@@ -12,11 +12,13 @@ class UnivercityForm
     {
         return $schema
             ->components([
+                /** @phpstan-ignore-next-line */
                 TextInput::make('name')
                     ->required()
                     ->reactive()
-                    ->afterStateUpdated(fn($state, callable $set) => $set('slug', str($state)->slug()))
+                    ->afterStateUpdated(fn ($state, callable $set) => $set('slug', str($state)->slug()))
                     ->translatableTabs(),
+                /** @phpstan-ignore-next-line */
                 TextInput::make('short_name')
                     ->translatableTabs(),
                 TextInput::make('slug')

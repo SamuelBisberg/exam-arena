@@ -14,7 +14,7 @@ use Spatie\EloquentSortable\SortableTrait;
 class Topic extends Model implements Sortable
 {
     /** @use HasFactory<\Database\Factories\TopicFactory> */
-    use HasFactory, SortableTrait, HasLogsActivityWithDefaultOptions;
+    use HasFactory, HasLogsActivityWithDefaultOptions, SortableTrait;
 
     protected $fillable = [
         'name',

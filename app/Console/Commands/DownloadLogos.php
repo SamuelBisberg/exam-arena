@@ -3,9 +3,9 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\File;
 
 class DownloadLogos extends Command
 {
@@ -18,14 +18,15 @@ class DownloadLogos extends Command
 
     protected $description = 'Parse a JSON file and download logos to public storage';
 
-    public function handle()
+    public function handle(): void
     {
         $filePath = $this->argument('file');
         $subFolder = $this->option('path');
 
         // 1. Check if the JSON file exists
-        if (!File::exists(base_path($filePath))) {
-            $this->error("JSON file not found at: " . base_path($filePath));
+        if (! File::exists(base_path($filePath))) {
+            $this->error('JSON file not found at: '.base_path($filePath));
+
             return;
         }
 
@@ -35,6 +36,7 @@ class DownloadLogos extends Command
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             $this->error("Invalid JSON format in {$filePath}");
+
             return;
         }
 
@@ -48,7 +50,7 @@ class DownloadLogos extends Command
             $englishName = $item['name']['en'] ?? 'unknown';
             $url = $item['logo_url'] ?? null;
 
-            if (!$url) {
+            if (! $url) {
                 continue;
             }
 
@@ -65,13 +67,13 @@ class DownloadLogos extends Command
                     File::put($publicPath, $response->body());
                 }
             } catch (\Exception $e) {
-                $this->error("\nFailed to download {$englishName}: " . $e->getMessage());
+                $this->error("\nFailed to download {$englishName}: ".$e->getMessage());
             }
 
             $bar->advance();
         }
 
         $bar->finish();
-        $this->info("\n\n✨ Process complete. Images are in: " . public_path($subFolder));
+        $this->info("\n\n✨ Process complete. Images are in: ".public_path($subFolder));
     }
 }

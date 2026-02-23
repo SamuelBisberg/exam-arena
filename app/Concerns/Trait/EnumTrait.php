@@ -35,7 +35,7 @@ trait EnumTrait
      */
     public static function pluck(): Collection
     {
-        return collect(self::cases())->mapWithKeys(fn(self $case): array => [
+        return collect(self::cases())->mapWithKeys(fn (self $case): array => [
             $case->value => $case->label(),
         ]);
     }

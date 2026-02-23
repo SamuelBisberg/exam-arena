@@ -7,7 +7,7 @@ use BackedEnum;
 
 class TopicPolicy extends ContentPolicy
 {
-    static BackedEnum|string $contentVisibleStatus = TopicStatusEnum::ACTIVE;
+    public static BackedEnum|string $contentVisibleStatus = TopicStatusEnum::ACTIVE;
 
-    static BackedEnum|string $statusActiveValue = 'topic_status';
+    public static BackedEnum|string $statusActiveValue = 'topic_status';
 }

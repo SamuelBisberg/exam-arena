@@ -18,11 +18,11 @@ class RolesAndPermissionSeeder extends Seeder
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
         collect(PermissionsEnum::cases())
-            ->each(fn(PermissionsEnum $permission) => Permission::firstOrCreate(['name' => $permission->value]));
+            ->each(fn (PermissionsEnum $permission) => Permission::firstOrCreate(['name' => $permission->value]));
 
         collect(RolesEnum::cases())
             ->each(
-                fn(RolesEnum $role) => Role::firstOrCreate(['name' => $role->value])
+                fn (RolesEnum $role) => Role::firstOrCreate(['name' => $role->value])
                     ->syncPermissions($this->getPermissionsForRole($role))
             );
     }
@@ -34,7 +34,7 @@ class RolesAndPermissionSeeder extends Seeder
             RolesEnum::MODERATOR => [
                 PermissionsEnum::EDIT_CONTENT,
                 PermissionsEnum::MODERATE_COMMENTS,
-                PermissionsEnum::VIEW_HIDDEN_CONTENT
+                PermissionsEnum::VIEW_HIDDEN_CONTENT,
             ],
             RolesEnum::USER => [],
         };

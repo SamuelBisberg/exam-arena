@@ -7,7 +7,6 @@ use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
 use Filament\Support\Enums\IconPosition;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
@@ -21,7 +20,7 @@ class UnivercitiesTable
         return $table
             ->columns([
                 ImageColumn::make('logo_path')
-                    ->defaultImageUrl(fn($record) => asset($record->logo_path))
+                    ->defaultImageUrl(fn ($record): string => asset($record->logo_path))
                     ->alignCenter()
                     ->label('Logo'),
                 TextColumn::make('name')
@@ -29,10 +28,10 @@ class UnivercitiesTable
                     ->sortable(),
                 TextColumn::make('website_url')
                     ->label('Website')
-                    ->formatStateUsing(fn($state) => str_replace(['http://', 'https://'], '', $state))
+                    ->formatStateUsing(fn ($state): string|array => str_replace(['http://', 'https://'], '', $state))
                     ->icon(Heroicon::ArrowTopRightOnSquare)
                     ->iconPosition(IconPosition::After)
-                    ->url(fn($record) => $record->website_url, shouldOpenInNewTab: true)
+                    ->url(fn ($record) => $record->website_url, shouldOpenInNewTab: true)
                     ->searchable(),
                 TextColumn::make('slug')
                     ->searchable()
@@ -58,7 +57,7 @@ class UnivercitiesTable
                     ->label('Activities')
                     ->icon(Heroicon::ArchiveBox)
                     ->color('info')
-                    ->url(fn($record) => UnivercityResource::getUrl('activities', ['record' => $record])),
+                    ->url(fn ($record): string => UnivercityResource::getUrl('activities', ['record' => $record])),
 
             ])
             ->toolbarActions([

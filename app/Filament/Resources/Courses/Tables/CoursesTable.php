@@ -32,30 +32,32 @@ class CoursesTable
                 TextColumn::make('course_code')
                     ->searchable(),
                 TextColumn::make('level')
-                    ->icon(fn($state) => match ($state) {
+                    ->icon(fn ($state): Heroicon => match ($state) {
                         CourseLevelEnum::BACHELORS => Heroicon::AcademicCap,
                         CourseLevelEnum::ADVANCED_BACHELORS => Heroicon::RocketLaunch,
                         CourseLevelEnum::MASTERS => Heroicon::LightBulb,
+                        default => Heroicon::QuestionMarkCircle,
                     })
-                    ->formatStateUsing(fn($state) => $state->label())
+                    ->formatStateUsing(fn ($state) => $state->label())
                     ->color('natural')
                     ->badge()
                     ->searchable(),
                 TextColumn::make('activity_status')
                     ->badge()
-                    ->color(fn($state) => match ($state) {
+                    ->color(fn ($state): string => match ($state) {
                         CourseActivityStatusEnum::ACTIVE => 'success',
                         CourseActivityStatusEnum::INACTIVE => 'warning',
-                        CourseActivityStatusEnum::DRAFT => 'natural',
+                        CourseActivityStatusEnum::DRAFT => 'gray',
+                        default => 'danger',
                     })
-                    ->formatStateUsing(fn($state) => $state->label())
+                    ->formatStateUsing(fn ($state) => $state->label())
                     ->searchable(),
                 TextColumn::make('createdBy.name')
                     ->label('Created By')
                     ->sortable()
                     ->icon(Heroicon::ArrowTopRightOnSquare)
                     ->iconPosition(IconPosition::After)
-                    ->url(fn($record) => $record?->createdBy ? route('home') : null)
+                    ->url(fn ($record): ?string => $record?->createdBy ? route('home') : null)
                     ->placeholder('—'),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -76,7 +78,7 @@ class CoursesTable
                     ->label('Activities')
                     ->icon(Heroicon::ArchiveBox)
                     ->color('info')
-                    ->url(fn($record) => CourseResource::getUrl('activities', ['record' => $record])),
+                    ->url(fn ($record): string => CourseResource::getUrl('activities', ['record' => $record])),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

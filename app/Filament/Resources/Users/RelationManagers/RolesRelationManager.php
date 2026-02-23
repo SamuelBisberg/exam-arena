@@ -11,6 +11,9 @@ use Filament\Forms\Components\Select;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Table;
 
+/**
+ * @property \App\Models\User $ownerRecord
+ */
 class RolesRelationManager extends RelationManager
 {
     protected static string $relationship = 'roles';
@@ -26,11 +29,11 @@ class RolesRelationManager extends RelationManager
             ->headerActions([
                 CreateAction::make(),
                 AttachAction::make()
-                    ->recordSelect(fn(Select $select) => $select->options(
+                    ->recordSelect(fn (Select $select): \Filament\Forms\Components\Select => $select->options(
                         RoleResource::getEloquentQuery()
                             ->whereNotIn('id', $this->ownerRecord->roles()->pluck('id'))
                             ->pluck('name', 'id')
-                            ->mapwithKeys(fn($name, $id) => [$id => RolesEnum::tryFrom($name)?->label() ?? $name])
+                            ->mapwithKeys(fn ($name, $id): array => [$id => RolesEnum::tryFrom($name)?->label() ?? $name])
                     )),
             ]);
     }

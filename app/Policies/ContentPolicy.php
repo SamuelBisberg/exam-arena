@@ -17,12 +17,12 @@ class ContentPolicy extends BasePolicy
     /**
      * The status value that indicates the content is visible to regular users. This should be set in the specific policy for each content type.
      */
-    static BackedEnum|string $statusActiveValue = 'active';
+    public static BackedEnum|string $statusActiveValue = 'active';
 
     /**
      * The name of the status field on the model that indicates the content's visibility status. This should be set in the specific policy for each content type.
      */
-    static string $statusField = 'status';
+    public static string $statusField = 'status';
 
     /**
      * Determine whether the user can view any models.
@@ -35,7 +35,7 @@ class ContentPolicy extends BasePolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(?User $user = null, Model $model): Response
+    public function view(?User $user, Model $model): Response
     {
         return $model->{self::$statusField} === self::$statusActiveValue || $user?->can(PermissionsEnum::VIEW_HIDDEN_CONTENT) ?
             Response::allow() :

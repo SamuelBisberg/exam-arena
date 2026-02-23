@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\Univercities;
 
 use App\Enums\NavigationGroupEnum;
-use App\Filament\Resources\Courses\Pages\ListCourseActivities;
 use App\Filament\Resources\Univercities\Pages\CreateUnivercity;
 use App\Filament\Resources\Univercities\Pages\EditUnivercity;
 use App\Filament\Resources\Univercities\Pages\ListUnivercities;
@@ -44,7 +43,7 @@ class UnivercityResource extends Resource
     public static function getRelations(): array
     {
         return [
-            CoursesRelationManager::class
+            CoursesRelationManager::class,
         ];
     }
 

@@ -17,14 +17,14 @@ class RolesTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->formatStateUsing(fn($state) => RolesEnum::tryFrom($state)?->label() ?? $state)
+                    ->formatStateUsing(fn ($state) => RolesEnum::tryFrom($state)?->label() ?? $state)
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('guard_name')
                     ->label('Guard')
                     ->badge()
                     ->color('neutral')
-                    ->icon(fn($state) => match ($state) {
+                    ->icon(fn ($state): \Filament\Support\Icons\Heroicon => match ($state) {
                         'web' => Heroicon::GlobeEuropeAfrica,
                         'api' => Heroicon::Server,
                         default => Heroicon::QuestionMarkCircle,
@@ -44,7 +44,7 @@ class RolesTable
                 //
             ])
             ->recordActions([
-                EditAction::make()->visible(fn($record) => ! (bool) RolesEnum::tryFrom($record->name)),
+                EditAction::make()->visible(fn ($record): bool => ! (bool) RolesEnum::tryFrom($record->name)),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
