@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class RolesAndPermissionSeeder extends Seeder
@@ -15,6 +16,9 @@ class RolesAndPermissionSeeder extends Seeder
     public function run(): void
     {
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+
+        collect(PermissionsEnum::cases())
+            ->each(fn(PermissionsEnum $permission) => Permission::firstOrCreate(['name' => $permission->value]));
 
         collect(RolesEnum::cases())
             ->each(
