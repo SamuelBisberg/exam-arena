@@ -1,0 +1,17 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app/
+        - database/
+        - config/
+        - routes/
+
+    level: 5
+
+    excludePaths:
+        - vendor
+        - storage
+        - bootstrap/cache
+        - database/migrations/2026_02_10_152916_create_permission_tables.php
