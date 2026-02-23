@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Filament\Resources\Univercities\Schemas;
+namespace App\Filament\Resources\Universities\Schemas;
 
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Schema;
 
-class UnivercityInfolist
+class UniversityInfolist
 {
     public static function configure(Schema $schema): Schema
     {

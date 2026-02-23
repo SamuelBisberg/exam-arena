@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Univercities\RelationManagers;
+namespace App\Filament\Resources\Universities\RelationManagers;
 
 use App\Filament\Resources\Courses\CourseResource;
 use Filament\Actions\AssociateAction;

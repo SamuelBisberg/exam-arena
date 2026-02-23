@@ -16,7 +16,7 @@ use Spatie\Translatable\HasTranslations;
  * @property string|null $website_url
  * @property string|null $description
  */
-class Univercity extends Model
+class University extends Model
 {
     use HasLogsActivityWithDefaultOptions, HasTranslations;
 

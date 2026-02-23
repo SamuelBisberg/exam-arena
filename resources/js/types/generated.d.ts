@@ -31,7 +31,7 @@ declare namespace App.Models {
         course_id: number;
         order_column: number;
     };
-    export type Univercity = {
+    export type University = {
         id: number;
         name: string;
         short_name: string;

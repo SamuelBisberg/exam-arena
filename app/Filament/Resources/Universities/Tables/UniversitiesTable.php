@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\Univercities\Tables;
+namespace App\Filament\Resources\Universities\Tables;
 
-use App\Filament\Resources\Univercities\UnivercityResource;
+use App\Filament\Resources\Universities\UniversityResource;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -13,7 +13,7 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class UnivercitiesTable
+class UniversitiesTable
 {
     public static function configure(Table $table): Table
     {
@@ -57,7 +57,7 @@ class UnivercitiesTable
                     ->label('Activities')
                     ->icon(Heroicon::ArchiveBox)
                     ->color('info')
-                    ->url(fn ($record): string => UnivercityResource::getUrl('activities', ['record' => $record])),
+                    ->url(fn ($record): string => UniversityResource::getUrl('activities', ['record' => $record])),
 
             ])
             ->toolbarActions([
