@@ -1,0 +1,67 @@
+name: setup
+description: Sets up server & frontend in development environment with sqlite database
+
+inputs:
+  php-version:
+    description: The PHP version to use
+    required: true
+    default: '8.5'
+
+  node-version:
+    description: The Node.js version to use
+    required: true
+    default: '24'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '${{ inputs.php-version }}'
+        tools: composer:v2
+        coverage: xdebug
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '${{ inputs.node-version }}'
+
+    - name: Cache Node Modules
+      uses: actions/cache@v4
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Cache Composer Dependencies
+      uses: actions/cache@v4
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install Composer Dependencies
+      shell: bash
+      run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+    - name: Copy Environment File
+      shell: bash
+      run: cp .env.example .env
+
+    - name: Generate Application Key
+      shell: bash
+      run: php artisan key:generate
+
+    - name: Install Node Dependencies
+      shell: bash
+      run: npm ci
+
+    - name: Build Assets
+      shell: bash
+      run: npm run build
