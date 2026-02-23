@@ -85,14 +85,14 @@ Table exams {
   id int [pk, increment]
   course_id int [not null, ref: > courses.id]
 
-  questionnaire_number int
-  session_number int
+  questionnaire_identifier varchar
+  session varchar
   semester varchar
   exam_type varchar
 
   exam_date date
 
-  duration_hours int
+  duration_minutes int
   total_pages int
   total_questions int
 

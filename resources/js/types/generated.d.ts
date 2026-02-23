@@ -12,7 +12,14 @@ declare namespace App.Enums {
         | 'impersonate_users'
         | 'view_hidden_content';
     export type RolesEnum = 'admin' | 'moderator' | 'user';
+    export type SemesterEnum = 'Spring' | 'Summer' | 'Fall';
+    export type SessionEnum = 'A' | 'B' | 'C' | 'SPECIAL';
     export type TopicStatusEnum = 'active' | 'inactive' | 'draft';
+    export type VisibilityStatusEnum =
+        | 'draft'
+        | 'published'
+        | 'archived'
+        | 'unavailable';
 }
 declare namespace App.Models {
     export type Course = {
@@ -22,6 +29,23 @@ declare namespace App.Models {
         course_code?: string | null;
         level: App.Enums.CourseLevelEnum;
         activity_status: App.Enums.CourseActivityStatusEnum;
+    };
+    export type Exam = {
+        id: number;
+        course_id: number;
+        questionnaire_identifier: string;
+        session: App.Enums.SessionEnum;
+        semester: App.Enums.SemesterEnum;
+        year: number;
+        yearAndSemester: string;
+        exam_date: string;
+        visibility_status: App.Enums.VisibilityStatusEnum;
+        total_pages: number;
+        total_questions: number;
+        duration_minutes?: number | null;
+        instructions?: string | null;
+        created_at: string;
+        updated_at?: string | null;
     };
     export type Topic = {
         id: number;
