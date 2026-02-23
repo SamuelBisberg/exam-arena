@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\Univercities\Schemas;
+namespace App\Filament\Resources\Universities\Schemas;
 
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
-class UnivercityForm
+class UniversityForm
 {
     public static function configure(Schema $schema): Schema
     {

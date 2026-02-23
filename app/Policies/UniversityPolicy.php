@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Database\Eloquent\Model;
 
-class UnivercityPolicy extends BasePolicy
+class UniversityPolicy extends BasePolicy
 {
     /**
      * Determine whether the user can view any models.

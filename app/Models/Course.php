@@ -57,9 +57,9 @@ class Course extends Model implements HasMedia
             });
     }
 
-    public function univercity()
+    public function University()
     {
-        return $this->belongsTo(Univercity::class);
+        return $this->belongsTo(University::class);
     }
 
     public function topics(): HasMany
