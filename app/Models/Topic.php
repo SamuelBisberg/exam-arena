@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Concerns\HasLogsActivityWithDefaultOptions;
 use App\Enums\TopicStatusEnum;
+use App\Traits\HasLogsActivityWithDefaultOptions;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

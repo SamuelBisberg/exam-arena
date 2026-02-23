@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Concerns\HasLogsActivityWithDefaultOptions;
+use App\Traits\HasLogsActivityWithDefaultOptions;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Translatable\HasTranslations;
