@@ -40,10 +40,10 @@ Table courses {
 
 Table topics {
   id int [pk, increment]
-  order int
+  order_column int
   name varchar
   description text [null]
-  status varchar
+  topic_status varchar
   course_id int [ref: > courses.id]
   created_at timestamp
   updated_at timestamp
