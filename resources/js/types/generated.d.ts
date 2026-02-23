@@ -35,6 +35,7 @@ declare namespace App.Models {
         id: number;
         name: string;
         short_name: string;
+        slug: string;
         logo_path?: string | null;
         country?: string | null;
         website_url?: string | null;

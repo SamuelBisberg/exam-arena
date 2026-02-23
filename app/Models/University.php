@@ -11,6 +11,7 @@ use Spatie\Translatable\HasTranslations;
  * @property int $id
  * @property string $name
  * @property string $short_name
+ * @property string $slug
  * @property string|null $logo_path
  * @property string|null $country
  * @property string|null $website_url
@@ -24,6 +25,7 @@ class University extends Model
         'name',
         'short_name',
         'logo_path',
+        'slug',
         'country',
         'website_url',
         'description',
