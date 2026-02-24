@@ -3,19 +3,17 @@
 namespace App\Filament\Schemas\Components;
 
 use Filament\Actions\Action;
-use Filament\Resources\Resource;
 use Filament\Support\Icons\Heroicon;
-use Livewire\Component;
 
-class ActivitiesLinkAction extends Component
+class ActivitiesLinkAction
 {
     /**
-     * @param  class-string<resource>  $resource
+     * @param  class-string<\Filament\Resources\Resource>  $resource
      */
-    public static function make(string $resource, ?string $name = null): Action
+    public static function make(string $resource, ?string $name = null, ?string $label = null): Action
     {
-        return Action::make($name ?? __('Activities'))
-            ->label('Activities')
+        return Action::make($name ?? 'activities')
+            ->label($label ?? __('Activities'))
             ->icon(Heroicon::ArchiveBox)
             ->color('info')
             ->url(fn ($record): string => $resource::getUrl('activities', ['record' => $record]));
