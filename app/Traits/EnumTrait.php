@@ -9,7 +9,7 @@ trait EnumTrait
     /**
      * Convert enum cases to a collection.
      *
-     * @return Collection<int, array{value: string, label: string, description: string|null, color: string|null, lucideIcon: string|null}>
+     * @return Collection<int, array{value: string, label: string, description: string|null, color: string|null, heroIcon: string|null}>
      */
     public static function toCollection(): Collection
     {
@@ -23,7 +23,7 @@ trait EnumTrait
                 /** @phpstan-ignore-next-line */
                 'color' => method_exists($case, 'color') ? $case->color() : null,
                 /** @phpstan-ignore-next-line */
-                'lucideIcon' => method_exists($case, 'lucideIcon') ? $case->lucideIcon() : null,
+                'heroIcon' => method_exists($case, 'heroIcon') ? $case->heroIcon() : null,
             ];
         })->values();
     }
@@ -33,10 +33,14 @@ trait EnumTrait
      *
      * @return Collection<string, string>
      */
-    public static function pluck(): Collection
+    public static function pluck(string $method = 'label'): Collection
     {
+        if (! method_exists(self::class, $method)) {
+            throw new \InvalidArgumentException("Method {$method} does not exist on enum: ".self::class);
+        }
+
         return collect(self::cases())->mapWithKeys(fn (self $case): array => [
-            $case->value => $case->label(),
+            $case->value => $case->{$method}(),
         ]);
     }
 }

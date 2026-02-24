@@ -32,4 +32,14 @@ enum VisibilityStatusEnum: string
             self::UNAVAILABLE => __('This item is unavailable and not visible.'),
         };
     }
+
+    public function color(): string
+    {
+        return match ($this) {
+            self::DRAFT => 'gray',
+            self::PUBLISHED => 'success',
+            self::ARCHIVED => 'warning',
+            self::UNAVAILABLE => 'danger',
+        };
+    }
 }
