@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "eloquent-best-practices": {
+      "source": "iserter/laravel-claude-agents",
+      "sourceType": "github",
+      "computedHash": "370e1502efc9d179f5df7470a45a10302de81de9cf378641403e4ade9eb7d67f"
+    },
+    "laravel-inertia-react": {
+      "source": "asyrafhussin/agent-skills",
+      "sourceType": "github",
+      "computedHash": "065829d2ce2e9b97cc2a92721a5c0163532aa5ceae85c743a11ab95a08bac5a4"
+    },
+    "laravel-specialist": {
+      "source": "jeffallan/claude-skills",
+      "sourceType": "github",
+      "computedHash": "05120c40b8ba7be02b913fc719c0d26fdab42126b061f5b36679fe07de45231f"
+    },
+    "laravel-testing": {
+      "source": "leeovery/claude-laravel",
+      "sourceType": "github",
+      "computedHash": "3d7f5629789cc2743146d4430307da7b8207123a28865a69b3b854d158c0cca4"
+    }
+  }
+}
