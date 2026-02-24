@@ -20,7 +20,7 @@ class UniversitySeeder extends Seeder
                 ], [
                     'name' => $University['name'],
                     'website_url' => $University['website_url'] ?? null,
-                    'logo_path' => 'images/Universities/logos/'.hash('sha256', Str::lower(trim($University['name']['en']))).'.'.Str::afterLast($University['logo_url'], '.'),
+                    'logo_path' => 'images/universities/logos/'.hash('sha256', Str::lower(trim($University['name']['en']))).'.'.Str::afterLast($University['logo_url'], '.'),
                     'country' => 'Israel',
                 ])
             );
