@@ -44,9 +44,6 @@
     "Undergraduate degree level course": "קורס ברמת תואר ראשון",
     "User": "משתמש",
     "View Admin Panel": "הצג לוח ניהול",
-<<<<<<< Updated upstream
-    "View Hidden Content": "הצג תוכן מוסתר"
-=======
     "View Hidden Content": "הצג תוכן מוסתר",
     "Archived": "ארכיון",
     "A special session outside the regular schedule.": "מושב מיוחד מחוץ ללוח הזמנים הרגיל.",
@@ -70,5 +67,4 @@
     "This item is unavailable and not visible.": "פריט זה לא זמין ואינו נראה.",
     "Unavailable": "לא זמין",
     "Activities": "פעילויות"
->>>>>>> Stashed changes
 }
